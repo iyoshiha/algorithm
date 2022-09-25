@@ -4,30 +4,25 @@ import(
 	. "fmt"
 )
 
-func setInput(n int) []int{
+func setInput() (int, []int){
+	var n int
+		Scan(&n)
 		var input int
 		var A []int
 		for i := 0; i < n ; i++{
 			Scan(&input)
 			A = append(A, input)
 		}
-		return A
+		return n, A
 }
 
 
 
 func main() {
-	var n int
-	var A []int
-	var q int
-	var M []int
 
-	Scan(&n)
-	A = setInput(n)
-	Scan(&q)
-	M = setInput(q)
-
-	Println(A)
+	n, A := setInput()
+	q, M := setInput()
+	Println(A, n, q, M)
 
 
 }

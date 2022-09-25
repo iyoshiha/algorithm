@@ -13,9 +13,15 @@ func main() {
 
 	Scan(&n)
 
-	for i, v := range n {
-		Scan(&input)
-		A = append(A, input)
-	}
-	Println(A)
+	// for i, v := range n {
+	A = func (n int, A []int) []int{
+		for i := 0; i < n ; i++{
+			Scan(&input)
+			A = append(A, input)
+		}
+		return A
+	}(n, A)
+		Println(A)
+
+
 }

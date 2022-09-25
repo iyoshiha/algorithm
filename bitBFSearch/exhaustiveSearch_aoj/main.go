@@ -25,10 +25,18 @@ func main() {
 	q, M := setInput()
 	Println(A, n, q, M)
 
-	pattern := math.Pow(2,n);
-	for i := 0; i < pattern ; i++ {
-		for j := 0; j < n; j++ {
-			pattern >> j & 1
+	for pattern, k := 0,int(math.Pow(2,float64(n))); k < q; k++ {
+		for i := 0; i < pattern ; i++ {
+			for total, j := 0, 0; j < n; j++ {
+				if pattern>>j&1 == 1 {
+					total+=A[j]
+				}
+				if total==M[k] {
+					Println("yes")
+				} else {
+					Println("no")
+				}
+			}
 		}
 	}
 }

@@ -1,9 +1,9 @@
 package go
 
 import(
-	"fmt"
+	. "fmt"
 )
 
 func main() {
-
+	Println("hello")
 }

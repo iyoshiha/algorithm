@@ -5,5 +5,5 @@ import(
 )
 
 func main() {
-	Println("hello")
+	Println(3&1)
 }

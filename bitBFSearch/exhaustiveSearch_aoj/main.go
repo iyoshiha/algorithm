@@ -5,16 +5,16 @@ import(
 )
 
 func main() {
-	var n byte
+	var n int 
 	var A []int
-	var q byte
-	var M []int
-	var input
+//	var q int
+//	var M []int
+	var input int
 
-	Scan($n)
+	Scan(&n)
 
 	for i, v := range n {
-		Scan($input)
+		Scan(&input)
 		A = append(A, input)
 	}
 	Println(A)

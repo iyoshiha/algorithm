@@ -11,6 +11,7 @@ int s[15][15];
 int k[15];
 int p[15];
 signed main() {
+	// take input
 	int n, m; cin >> n >> m;
 	rep(i, m) {
 		cin >> k[i];

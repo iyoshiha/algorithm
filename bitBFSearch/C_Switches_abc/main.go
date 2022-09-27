@@ -5,29 +5,10 @@ import(
 	"math"
 )
 
-func setInput() (int, []int){
-	var n int
-		Scan(&n)
-		var input int
-		var A []int
-		for i := 0; i < n ; i++{
-			Scan(&input)
-			A = append(A, input)
-		}
-		return n, A
-}
-
-
-func add(index int, ans []int) []int{
-
-	ans[index] = 1
-	return  ans
-}
-
 func main() {
 
-	n, A := setInput()
-	q, M := setInput()
+	var n, m int
+	Scan()
 	var ans []int = make([]int, q)
 	var total int = 0
 

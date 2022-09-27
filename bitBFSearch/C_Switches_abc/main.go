@@ -16,12 +16,15 @@ func main() {
 
 	Scan(&n)
 	Scan(&m)
-	s = make([][]int, n)
+	s = make([][]int, m)
+	for i:=0;i<m;i++{
+		s[i] = make([]int, n)
+	}
 
 	for i:=0;i<m;i++ {
 		Scan(&tmp)
 		k = append(k,tmp)
-		for j:=0;k[i]<j;j++{
+		for j:=0;j<k[i];j++{
 			Scan(&tmp)
 			tmp--
 			s[i][j] = tmp
@@ -31,6 +34,7 @@ func main() {
 		Scan(&tmp)
 		p = append(p, tmp)
 	}
+	Println(n,m,k,s,p)
 
 	for i:=0;i<1<<n;i++{
 		for j,totalSwitch:=0,0;j<m;j++{

@@ -12,6 +12,7 @@ func main() {
 	var p []int
 	var tmp int
 	var ans int
+	var notFlag bool
 
 	Scan(&n)
 	Scan(&m)

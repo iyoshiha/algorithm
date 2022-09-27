@@ -28,7 +28,7 @@ func main() {
 		}
 	}
 	for i:=0;i<m;i++{
-		Scan($tmp)
+		Scan(&tmp)
 		p = append(p, tmp)
 	}
 

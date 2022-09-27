@@ -8,9 +8,28 @@ import(
 func main() {
 
 	var n, m int
-	Scan()
-	var ans []int = make([]int, q)
-	var total int = 0
+	var k []int
+	var s [][]int
+	var p []int
+	var tmp int
+
+	Scan(&n)
+	Scan(&m)
+
+	for i:=0;i<m;i++ {
+		Scan(&tmp)
+		k = append(k,tmp)
+		for j:=0;k[i]<j;j++{
+			Scan(&tmp)
+			s[i] = append(s[i], tmp)
+		}
+	}
+	for i:=0;i<m;i++;{
+		Scan($tmp)
+		p = append(p, tmp)
+	}
+
+
 
 	pattern:= int(math.Pow(2,float64(n)))
 	for i := 0; i < pattern ; i++ {

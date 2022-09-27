@@ -13,10 +13,10 @@ func main() {
 	var tmp int
 	var ans int
 	var notFlag bool
-	var 
 
 	Scan(&n)
 	Scan(&m)
+	s = make([][]int, n)
 
 	for i:=0;i<m;i++ {
 		Scan(&tmp)
@@ -24,7 +24,7 @@ func main() {
 		for j:=0;k[i]<j;j++{
 			Scan(&tmp)
 			tmp--
-			s[i] = append(s[i], tmp)
+			s[i][j] = tmp
 		}
 	}
 	for i:=0;i<m;i++{

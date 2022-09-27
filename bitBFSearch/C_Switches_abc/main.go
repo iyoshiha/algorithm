@@ -34,13 +34,14 @@ func main() {
 		Scan(&tmp)
 		p = append(p, tmp)
 	}
-	Println(n,m,k,s,p)
 
+			Println(p, k, s)
 	for i:=0;i<1<<n;i++{
 		for j,totalSwitch:=0,0;j<m;j++{
-			for l,totalSwitch:=0,0;l<k[j];l++{
-
+			for l:=0;l<k[j];l++{
+				
 				if 1 == 1&i>>s[j][l]{
+			Println(i, s[j][l])
 					totalSwitch++
 				}
 			}
@@ -55,5 +56,5 @@ func main() {
 		}
 		notFlag=false
 	}
-	Println(ans)
+	Println(ans/2)
 }

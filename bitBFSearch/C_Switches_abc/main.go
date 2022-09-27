@@ -13,6 +13,7 @@ func main() {
 	var tmp int
 	var ans int
 	var notFlag bool
+	var 
 
 	Scan(&n)
 	Scan(&m)
@@ -32,7 +33,7 @@ func main() {
 	}
 
 	for i:=0;i<1<<n;i++{
-		for j:=0;j<m;j++{
+		for j,totalSwitch:=0,0;j<m;j++{
 			for l,totalSwitch:=0,0;l<k[j];l++{
 
 				if 1 == 1&i>>s[j][l]{
@@ -43,10 +44,12 @@ func main() {
 				notFlag = true
 				break
 			}
+			totalSwitch=0
 		}
 		if !notFlag {
 			ans++
 		}
+		notFlag=false
 	}
 	Println(ans)
 }

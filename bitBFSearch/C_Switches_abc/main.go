@@ -12,7 +12,6 @@ func main() {
 	var p []int
 	var tmp int
 	var ans int
-	var notFlag bool
 
 	Scan(&n)
 	Scan(&m)
@@ -35,26 +34,22 @@ func main() {
 		p = append(p, tmp)
 	}
 
-			Println(p, k, s)
 	for i:=0;i<1<<n;i++{
-		for j,totalSwitch:=0,0;j<m;j++{
+			sc := 0
+		for j:=0;j<m;j++{
+			tc := 0
 			for l:=0;l<k[j];l++{
-				
 				if 1 == 1&i>>s[j][l]{
-			Println(i, s[j][l])
-					totalSwitch++
+					tc++
 				}
 			}
-			if totalSwitch%2!=p[j]{
-				notFlag = true
-				break
+			if tc&1 == p[j]&1{
+				sc++;
 			}
-			totalSwitch=0
 		}
-		if !notFlag {
+		if sc == m{
 			ans++
 		}
-		notFlag=false
 	}
-	Println(ans/2)
+	Println(ans)
 }

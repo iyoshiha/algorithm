@@ -39,7 +39,7 @@ func main() {
 		for j:=0;j<m;j++{
 			tc := 0
 			for l:=0;l<k[j];l++{
-				if 1 == 1&i>>s[j][l]{
+				if 1 == i&1<<s[j][l]{
 					tc++
 				}
 			}

@@ -25,13 +25,13 @@ func main() {
 			s[i] = append(s[i], tmp)
 		}
 	}
-	for i:=0;i<m;i++;{
+	for i:=0;i<m;i++{
 		Scan($tmp)
 		p = append(p, tmp)
 	}
 
 	for i:=0;i<1<<n;i++{
-		for j:=0;j<m;j++;{
+		for j:=0;j<m;j++{
 			for l,totalSwitch:=0,0;l<k[j];l++{
 
 				if 1 == 1&i>>s[j][l]{

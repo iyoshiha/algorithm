@@ -12,6 +12,7 @@ func main() {
 	var s [][]int
 	var p []int
 	var tmp int
+	var ans int
 
 	Scan(&n)
 	Scan(&m)
@@ -31,9 +32,21 @@ func main() {
 	}
 
 	for i:=0;i<1<<n;i++{
-		for j:=0;j<
-		1&i>>s[j][k]
+		for j:=0;j<m;j++;{
+			for l,totalSwitch:=0,0;l<k[j];l++{
 
+				if 1 == 1&i>>s[j][l]{
+					totalSwitch++
+				}
+			}
+			if totalSwitch%2!=p[j]{
+				notFlag = true
+				break
+			}
+		}
+		if !notFlag {
+			ans++
+		}
 	}
-
+	Println(ans)
 }

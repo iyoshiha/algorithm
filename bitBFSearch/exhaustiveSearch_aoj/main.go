@@ -42,7 +42,7 @@ func main() {
 		for k := 0; k < q; k++ {
 			if total==M[k] {
 				ans = add(k, ans)
-			} 
+			}
 		}
 		total = 0
 	}
@@ -53,3 +53,4 @@ func main() {
 		}
 	}
 }
+

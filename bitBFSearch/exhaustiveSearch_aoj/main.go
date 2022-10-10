@@ -17,6 +17,10 @@ func setInput() (int, []int){
 		return n, A
 }
 
+func ryo() {
+	Print("my vim env")
+}
+
 
 func add(index int, ans []int) []int{
 

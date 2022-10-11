@@ -29,6 +29,7 @@ func main() {
 			s[i][j] = tmp
 		}
 	}
+
 	for i:=0;i<m;i++{
 		Scan(&tmp)
 		p = append(p, tmp)

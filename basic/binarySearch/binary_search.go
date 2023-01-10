@@ -12,8 +12,7 @@ func main() {
 	var C int
 	var mid int
 
-	var getInput = 
-	func(n *int, S *[]int) {
+	getInput := func(n *int, S *[]int) {
 		var tmp int
 		fmt.Scan(n)
 		*S = make([]int, 0)

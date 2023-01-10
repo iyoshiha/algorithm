@@ -18,6 +18,8 @@ func getInput(v *int) {
 	fmt.Scan(v)
 }
 
-func getInputToArray(v *[]int) {
-	fmt.Scan(v)
+func getInputToArray(v *[]int, size int) {
+
+
+
 }

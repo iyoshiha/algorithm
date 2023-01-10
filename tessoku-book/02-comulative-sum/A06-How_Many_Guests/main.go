@@ -5,21 +5,28 @@ import (
 )
 
 func main() {
-	var n, q int
-	// A -> days
-	var days// , l, r  []int
+	// , l, r  []int
+	
 	fmt.Println("enter num: ")
-	getInput(&n)
-	getInput(&q)
-	fmt.Println("the number you entered is ", n)
+	n := getInput()
+	q := getInput()
+	days := getInputToArray(n + 1)
+	fmt.Println("the numbers you got from stdin are", days)
+	fmt.Println(n)
+	fmt.Println(q)
 }
 
-func getInput(v *int) {
-	fmt.Scan(v)
+func getInput() int{
+	var v int
+	fmt.Scan(&v)
+	return v
 }
 
-func getInputToArray(v *[]int, size int) {
-
-
-
+func getInputToArray(size int) []int{
+	val := make([]int, size)
+	for i := 1; i < size; i++{
+		tmp := getInput()
+		val[i] = tmp
+	}
+	return val
 }

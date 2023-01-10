@@ -14,6 +14,12 @@ func main() {
 	fmt.Println("the numbers you got from stdin are", days)
 	fmt.Println(n)
 	fmt.Println(q)
+	
+	dayMaps := make([]map[string]int, q)
+	for i := 0; i < q; i++ {
+		dayMaps[i] = getDayMap()
+	}
+	fmt.Println("this is dayMaps", dayMaps)
 }
 
 func getInput() int{
@@ -29,4 +35,12 @@ func getInputToArray(size int) []int{
 		val[i] = tmp
 	}
 	return val
+}
+
+func getDayMap() map[string]int{
+	daymap := map[string]int{
+		"left": getInput(),
+		"right": getInput(),
+	}
+	return daymap
 }

@@ -5,12 +5,10 @@ import (
 )
 
 func main() {
-	// , l, r  []int
-	
 	fmt.Println("enter num: ")
 	n := getInput()
 	q := getInput()
-	days := getInputToArray(n + 1)
+	days := getInputToArray(n)
 	fmt.Println("the numbers you got from stdin are", days)
 	fmt.Println(n)
 	fmt.Println(q)
@@ -20,6 +18,11 @@ func main() {
 		dayMaps[i] = getDayMap()
 	}
 	fmt.Println("this is dayMaps", dayMaps)
+
+	daysComulativeSum := makeComulativeSum(days)
+
+	fmt.Println("this is comulative sum", daysComulativeSum)
+
 }
 
 func getInput() int{
@@ -30,7 +33,7 @@ func getInput() int{
 
 func getInputToArray(size int) []int{
 	val := make([]int, size)
-	for i := 1; i < size; i++{
+	for i := 0; i < size; i++{
 		tmp := getInput()
 		val[i] = tmp
 	}
@@ -43,4 +46,12 @@ func getDayMap() map[string]int{
 		"right": getInput(),
 	}
 	return daymap
+}
+
+func makeComulativeSum(days []int) []int{
+	comulativeSum := make([]int, len(days) + 1)
+	for i:=0; i < len(days); i++{
+		comulativeSum[i+1] = comulativeSum[i] + days[i]
+	}
+	return comulativeSum
 }

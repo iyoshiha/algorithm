@@ -5,22 +5,20 @@ import (
 )
 
 func main() {
-	fmt.Println("enter num: ")
 	n := getInput()
 	q := getInput()
 	days := getInputToArray(n)
-	fmt.Println("the numbers you got from stdin are", days)
-	fmt.Println(n)
-	fmt.Println(q)
-	
 	dayMaps := make([]map[string]int, q)
 	for i := 0; i < q; i++ {
 		dayMaps[i] = getDayMap()
 	}
 	fmt.Println("this is dayMaps", dayMaps)
-
 	daysComulativeSum := makeComulativeSum(days)
 
+	// check input 
+	fmt.Println("the numbers you got from stdin are", days)
+	fmt.Println(n)
+	fmt.Println(q)
 	fmt.Println("this is comulative sum", daysComulativeSum)
 
 }

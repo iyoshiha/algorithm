@@ -8,9 +8,8 @@ import (
 
 func main() {
 	r := bufio.NewReader(os.Stdin)
-	// w := bufio.NewWriter(os.Stdout)
-
-	
+	w := bufio.NewWriter(os.Stdout)
+	defer w.Flush()
 
 	n := getBufferedIntInput(r)
 	q := getBufferedIntInput(r)
@@ -23,7 +22,7 @@ func main() {
 	daysComulativeSum := makeComulativeSum(days)
 
 	for _, v := range dayMaps{
-		fmt.Println(daysComulativeSum[v["right"]] - daysComulativeSum[v["left"] - 1])
+		fmt.Fprintln(w, daysComulativeSum[v["right"]] - daysComulativeSum[v["left"] - 1])
 	}
 }
 

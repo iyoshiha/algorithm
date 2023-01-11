@@ -12,7 +12,6 @@ func main() {
 	for i := 0; i < q; i++ {
 		dayMaps[i] = getDayMap()
 	}
-	fmt.Println("this is dayMaps", dayMaps)
 	daysComulativeSum := makeComulativeSum(days)
 
 	for _, v := range dayMaps{
@@ -20,6 +19,7 @@ func main() {
 	}
 
 	// check input 
+	fmt.Println("this is dayMaps", dayMaps)
 	fmt.Println("the numbers you got from stdin are", days)
 	fmt.Println(n)
 	fmt.Println(q)

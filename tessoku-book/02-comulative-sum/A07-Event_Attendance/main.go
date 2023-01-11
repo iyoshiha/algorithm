@@ -11,18 +11,18 @@ func main() {
 	w := bufio.NewWriter(os.Stdout)
 	defer w.Flush()
 
+	d := getBufferedIntInput(r)
 	n := getBufferedIntInput(r)
-	q := getBufferedIntInput(r)
-	days := getInputToArray(n, r)
 
-	dayMaps := make([]map[string]int, q)
-	for i := 0; i < q; i++ {
-		dayMaps[i] = getDayMap(r)
+	maps := make([]map[string]int, n)
+	for i := 0; i < n; i++ {
+		maps[i] = getMap(r)
+		fmt.Println(maps[i])
 	}
-	daysComulativeSum := makeComulativeSum(days)
+	comulativeSum := makeComulativeSum(maps, d)
 
-	for _, v := range dayMaps{
-		fmt.Fprintln(w, daysComulativeSum[v["right"]] - daysComulativeSum[v["left"] - 1])
+	for _, v := range comulativeSum{
+		fmt.Fprintln(w, v)
 	}
 }
 
@@ -41,18 +41,28 @@ func getInputToArray(size int, r *bufio.Reader) []int{
 	return val
 }
 
-func getDayMap(r *bufio.Reader) map[string]int{
-	daymap := map[string]int{
+func getMap(r *bufio.Reader) map[string]int{
+	personMap := map[string]int{
 		"left": getBufferedIntInput(r),
 		"right": getBufferedIntInput(r),
 	}
-	return daymap
+	return personMap
 }
 
-func makeComulativeSum(days []int) []int{
-	comulativeSum := make([]int, len(days) + 1)
-	for i:=0; i < len(days); i++{
-		comulativeSum[i+1] = comulativeSum[i] + days[i]
+func makeComulativeSum(maps []map[string]int, d int) []int{
+	peopleNumForEventdays := make([]int, d)
+	comulativeSum := make([]int, d)
+	for i:=0; i < len(maps); i++{
+		// -1は、eventの日が1日目の場合、対応する配列のインデックスは0のためminusする
+		peopleNumForEventdays[maps[i]["left"] - 1]++
+		// rightの場合,参加した次の日が前日比が-1になる。
+		// よって、５日目まで参加した場合、6日目に-1。
+		// 対応する日は、日付-1=インデックス
+		// 6-1=5 index 5 が-1になる
+		peopleNumForEventdays[maps[i]["right"]]--
+	}
+	for i, v:=range peopleNumForEventdays{
+		comulativeSum[i] += v
 	}
 	return comulativeSum
 }

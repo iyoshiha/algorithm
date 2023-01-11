@@ -15,6 +15,10 @@ func main() {
 	fmt.Println("this is dayMaps", dayMaps)
 	daysComulativeSum := makeComulativeSum(days)
 
+	for _, v := range dayMaps{
+		fmt.Println(daysComulativeSum[v["right"]] - daysComulativeSum[v["left"] - 1])
+	}
+
 	// check input 
 	fmt.Println("the numbers you got from stdin are", days)
 	fmt.Println(n)

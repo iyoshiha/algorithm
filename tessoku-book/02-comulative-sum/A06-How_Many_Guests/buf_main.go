@@ -28,7 +28,7 @@ func main() {
 
 func getBufferedIntInput(r *bufio.Reader) int{
 	var v int
-	fmt.Scan(&v)
+	fmt.Fscan(r, &v)
 	return v
 }
 

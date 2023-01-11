@@ -17,7 +17,6 @@ func main() {
 	maps := make([]map[string]int, n)
 	for i := 0; i < n; i++ {
 		maps[i] = getMap(r)
-		fmt.Println(maps[i])
 	}
 	comulativeSum := makeComulativeSum(maps, d)
 
@@ -62,7 +61,11 @@ func makeComulativeSum(maps []map[string]int, d int) []int{
 		peopleNumForEventdays[maps[i]["right"]]--
 	}
 	for i, v:=range peopleNumForEventdays{
-		comulativeSum[i] += v
+		if i == 0{
+			comulativeSum[0] = v
+			continue
+		}
+		comulativeSum[i] = v + comulativeSum[i-1]
 	}
 	return comulativeSum
 }

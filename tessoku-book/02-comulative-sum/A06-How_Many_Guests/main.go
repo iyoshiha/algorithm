@@ -8,6 +8,7 @@ func main() {
 	n := getInput()
 	q := getInput()
 	days := getInputToArray(n)
+
 	dayMaps := make([]map[string]int, q)
 	for i := 0; i < q; i++ {
 		dayMaps[i] = getDayMap()
@@ -17,14 +18,6 @@ func main() {
 	for _, v := range dayMaps{
 		fmt.Println(daysComulativeSum[v["right"]] - daysComulativeSum[v["left"] - 1])
 	}
-
-	// check input 
-	fmt.Println("this is dayMaps", dayMaps)
-	fmt.Println("the numbers you got from stdin are", days)
-	fmt.Println(n)
-	fmt.Println(q)
-	fmt.Println("this is comulative sum", daysComulativeSum)
-
 }
 
 func getInput() int{

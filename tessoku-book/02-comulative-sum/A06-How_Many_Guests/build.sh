@@ -1,3 +1,3 @@
 #! /bin/sh
 #
-go build -o comulative-sum main.go
+go build -o exe.out main.go

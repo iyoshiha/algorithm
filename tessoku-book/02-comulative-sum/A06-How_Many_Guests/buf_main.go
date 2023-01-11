@@ -26,12 +26,6 @@ func main() {
 	}
 }
 
-func getInput() int{
-	var v int
-	fmt.Scan(&v)
-	return v
-}
-
 func getBufferedIntInput(r *bufio.Reader) int{
 	var v int
 	fmt.Scan(&v)
